@@ -1,0 +1,53 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <!-- Position Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="dateFormatted">
+      <th mat-header-cell *matHeaderCellDef> Data </th>
+      <td mat-cell *matCellDef="let element"> {{ element.dateFormatted }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>
+        <button mat-mini-fab color="primary" (click)="openForm()">
+          <mat-icon>add_task</mat-icon>
+        </button>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-mini-fab color="basic" (click)="openForm(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        &nbsp;
+        <button mat-mini-fab color="warn" (click)="openDeleteConfirm(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <div [style.display]="isLoading ? 'flex' : 'none'" style="justify-content: center; align-items: center;">
+    <mat-progress-spinner color="primary"
+                          mode="indeterminate">
+    </mat-progress-spinner>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="[10, 20]"
+                 [length]="taskTotal"
+                 showFirstLastButtons
+                 aria-label="Selecione a página das tarefas" (page)="pageEvent = $event; onPaginateChange($event)">
+  </mat-paginator>
+</div>

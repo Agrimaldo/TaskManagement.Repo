@@ -1,0 +1,25 @@
+.sidenav-container {
+  height: 100%;
+  .sidenav{
+  width: 250px;
+}
+.header-toolbar {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  .header-content{
+    display: flex;
+    flex-grow: 2;
+    align-items: center;
+    justify-content: center;
+    .header-image-icon{
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+  .main-content {
+    margin: 20px;
+  }
+}

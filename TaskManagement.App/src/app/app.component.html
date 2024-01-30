@@ -1,0 +1,26 @@
+<mat-sidenav-container class="sidenav-container">
+  <!--Side Nav-->
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" [opened]="false">
+    <mat-nav-list>
+      <a mat-list-item (click)="navigateTo('/list')"> List</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <mat-toolbar color="primary" class="header-toolbar">
+      <!--<button aria-label="menu" class="menu-icon" mat-icon-button (click)="toggleSideNav()">
+        <mat-icon>menu</mat-icon>
+      </button>-->
+      <div class="header-content">
+        <span><img class="header-image-icon" [src]="imageUrl" alt="image-icon"></span>
+        <span>{{ title }}</span>
+      </div>
+
+    </mat-toolbar>
+    <!--Main Content-->
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Atenção</h1>
+<div mat-dialog-content>
+  <p>Remover a tarefa {{ data.description }} ?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="CancelClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data.id" cdkFocusInitial>Confirmar</button>
+</div>
