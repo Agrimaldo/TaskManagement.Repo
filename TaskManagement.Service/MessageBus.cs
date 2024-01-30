@@ -15,16 +15,8 @@ namespace TaskManagement.Service
         IConnection connection;
         public IModel channel;
 
-        public MessageBus() 
+        public MessageBus(ConnectionFactory factory) 
         {
-            
-            ConnectionFactory factory = new ConnectionFactory();
-            factory.HostName = "localhost";
-            factory.VirtualHost = "/";
-            factory.Port = 5672;
-            factory.UserName = "guest";
-            factory.Password = "guest";
-
             connection = factory.CreateConnection();
             channel = connection.CreateModel();
         }
