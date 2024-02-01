@@ -1,4 +1,9 @@
-﻿USE EluminiTest;
+﻿IF(SELECT DB_ID('EluminiTest')) IS NULL
+BEGIN
+CREATE DATABASE EluminiTest;
+END
+
+USE EluminiTest;
 
 
 IF (SELECT OBJECT_ID('Tb_Task')) IS NULL
