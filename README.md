@@ -37,7 +37,7 @@ Obs.: No caso da imagem do Sql Server as credenciais são "-user=sa -password=RF
 ```
 > TaskManagement/TaskManagement.Repository/Script_001.sql
 ```
-Este Script faz a criação do banco de dados e da tabela necessária para que a aplicação inicie, por fim, basta instalar a aplicação Angular (TaskManagement\TaskManagement.App)
+Este Script faz a criação do banco de dados e da tabela necessária para que a aplicação inicie. Por fim, basta instalar a aplicação Angular (TaskManagement\TaskManagement.App)
 
 ```
 npm install
