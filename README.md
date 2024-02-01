@@ -1,4 +1,4 @@
-# Introduction
+# Introdução
 Projeto exemplo de gerenciador de tarefas simples utilizando a seguinte stack : C# .NET (com EF), SQL Server, RabbitMQ e Angular.
 
 # Preparando
